@@ -1,3 +1,4 @@
+import ParticleBackground from './ParticleBackground'
 import { motion } from 'framer-motion'
 import { ArrowDown, Code2, Layers, Rocket, Download } from 'lucide-react'
 import profilePhoto from '../assets/Profile.jpg'
@@ -9,6 +10,7 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 pb-16 px-6 relative overflow-hidden">
+  <ParticleBackground />
 
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff06_1px,transparent_1px),linear-gradient(to_bottom,#ffffff06_1px,transparent_1px)] bg-[size:40px_40px]" />
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
@@ -47,7 +49,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-400 mb-6 font-medium"
             >
-              Computer Science Student &amp; Aspiring Full Stack Developer
+              Information Technology Student &amp; Aspiring Full Stack Developer
             </motion.h2>
 
             <motion.p
@@ -56,7 +58,7 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-gray-500 leading-relaxed mb-8 max-w-lg"
             >
-              A 3rd year CS student at{' '}
+              A 3rd year IT student at{' '}
               <span className="text-gray-300 font-medium">Northern Bukidnon State College</span>,
               passionate about building clean, functional web applications from
               database design all the way to polished user interfaces.
@@ -123,7 +125,7 @@ const HeroSection = () => {
                 <span className="text-gray-300 text-xs font-medium">Available for hire</span>
               </div>
               <div className="absolute -top-2 -left-2 bg-gray-900 border border-gray-700 rounded-xl px-3 py-2 shadow-xl">
-                <span className="text-yellow-400 text-xs font-medium">AI Champion 2025</span>
+                <span className="text-yellow-400 text-xs font-medium">A.I.Deas R10 Champion 2025</span>
               </div>
             </div>
           </motion.div>

@@ -1,3 +1,5 @@
+import { supabase } from '../lib/supabase'
+
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
@@ -8,12 +10,26 @@ const ContactSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
+  const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSent(true)
-    setForm({ name: '', email: '', message: '' })
-    setTimeout(() => setSent(false), 4000)
+    setLoading(true)
+
+    const { error } = await supabase
+      .from('Messages')
+      .insert([{ name: form.name, email: form.email, message: form.message }])
+
+    setLoading(false)
+
+    if (error) {
+      alert('Something went wrong. Please try again.')
+      console.error(error)
+    } else {
+      setSent(true)
+      setForm({ name: '', email: '', message: '' })
+      setTimeout(() => setSent(false), 4000)
+    }
   }
 
   const updateForm = (field: string, value: string) => {
@@ -131,10 +147,11 @@ const ContactSection = () => {
             </div>
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-medium py-3 rounded-lg transition-colors duration-200"
+              disabled={loading}
+              className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-500 disabled:bg-blue-800 disabled:cursor-not-allowed text-white font-medium py-3 rounded-lg transition-colors duration-200"
             >
               <Send size={16} />
-              {sent ? 'Message Sent!' : 'Send Message'}
+              {loading ? 'Sending...' : sent ? 'Message Sent!' : 'Send Message'}
             </button>
           </motion.form>
 
