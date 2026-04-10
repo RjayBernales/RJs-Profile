@@ -5,7 +5,7 @@ import {
   FaReact, FaNodeJs, FaGitAlt, FaGithub, FaFigma, FaDocker, FaCss3Alt, FaHtml5,
 } from 'react-icons/fa'
 import {
-  SiTypescript, SiJavascript, SiTailwindcss, SiHtml5,
+  SiTypescript, SiJavascript, SiTailwindcss, 
   SiSupabase, SiPostgresql, SiVite, SiVercel,
   SiNextdotjs, SiReact,
 } from 'react-icons/si'
