@@ -65,10 +65,10 @@ const AboutSection = () => {
             </div>
 
             <p className="text-gray-400 leading-relaxed">
-              I'm a driven CS student from{' '}
+              I'm a driven IT student from{' '}
               <span className="text-gray-200 font-medium">Northern Bukidnon State College</span>,
               passionate about turning ideas into real, working applications.
-              I enjoy every layer of development — from designing databases to
+              I enjoy every layer of development - from designing databases to
               crafting smooth, intuitive interfaces that people actually love using.
             </p>
 
@@ -84,7 +84,7 @@ const AboutSection = () => {
               </div>
               <div className="flex items-center gap-3 text-gray-400 text-sm">
                 <GraduationCap size={15} className="text-blue-400 flex-shrink-0" />
-                BS Computer Science — Northern Bukidnon State College
+                BS Information Technology - Northern Bukidnon State College
               </div>
             </div>
 
@@ -93,7 +93,7 @@ const AboutSection = () => {
               <div className="flex items-start gap-3 bg-yellow-400/5 border border-yellow-400/20 rounded-xl p-4">
                 <Trophy size={18} className="text-yellow-400 flex-shrink-0 mt-0.5" />
                 <div>
-                  <div className="text-white text-sm font-medium">Champion — A.I.Deas For Impact 2025</div>
+                  <div className="text-white text-sm font-medium">Champion - A.I.Deas For Impact 2025</div>
                   <div className="text-gray-500 text-xs mt-0.5">Region 10 AI Competition</div>
                 </div>
               </div>
