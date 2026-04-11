@@ -5,12 +5,13 @@ export type Project = {
   id: number
   title: string
   description: string
+  short_description: string | null
   tags: string[]
   github_url: string
   live_url: string
   featured: boolean
   order: number
-  image_url: string | null
+  img_url: string | null
 }
 
 const useProjects = () => {
